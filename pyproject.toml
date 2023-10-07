@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ['niadic_py*']
+exclude = ['niadic_py*tests']
+
+[project]
+name = "niadic_py"
+version = "0.0.1"
+authors = [
+    { name = "minwook-shin", email = "minwook0106@gmail.com" },
+]
+description = "Unofficial Python Wrapper for NIADic dataset"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas==2.1.1",
+    "openpyxl==3.1.2",
+    "chardet==5.2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "build==1.0.3",
+    "pdoc==14.1.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/minwook-shin/niadic_py"
+"Bug Tracker" = "https://github.com/minwook-shin/niadic_py/issues"
