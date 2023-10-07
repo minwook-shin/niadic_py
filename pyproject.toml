@@ -13,7 +13,7 @@ include = ['niadic_py*']
 "*" = ["*.csv", "*.xlsx"]
 
 [project]
-name = "NIADic_py"
+name = "NIADic-py"
 version = "0.0.1"
 authors = [
     { name = "minwook-shin", email = "minwook0106@gmail.com" },
