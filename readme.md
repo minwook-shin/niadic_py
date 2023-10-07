@@ -6,6 +6,14 @@ Unofficial Python Wrapper for NIADic dataset
 
 This is Python wrapper for the NIADic provided by the K-ICT Big Data Center.
 
+# Install
+
+https://pypi.org/project/NIADic-py/
+
+```commandline
+pip install NIADic-py
+```
+
 # Column
 
 * term : korean words
