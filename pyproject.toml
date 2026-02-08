@@ -14,7 +14,7 @@ include = ['niadic_py*']
 
 [project]
 name = "NIADic-py"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
     { name = "minwook-shin", email = "minwook0106@gmail.com" },
 ]
@@ -27,9 +27,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pandas==2.1.1",
-    "openpyxl==3.1.2",
-    "chardet==5.2.0"
+    "pandas>=2.2.2",
+    "numpy>=1.26.0",
+    "openpyxl"
 ]
 
 [project.optional-dependencies]

@@ -115,8 +115,8 @@ niadic_py    </h1>
 <h1 id="tokenizer-example">Tokenizer Example</h1>
 
 <ul>
-<li>input : "저는 오늘 아침에 하나의 빵을 먹고 학교로 급하게 갔습니다."</li>
-<li>output : ['저', '오늘', '아침', '하나', '빵', '먹', '학교', '급하', '갔습니']</li>
+<li>input : "우리는 도서관에서 재미있는 책을 읽고 맛있는 급식을 먹었습니다."</li>
+<li>output : ['우리', '도서관', '재미있', '책', '읽', '맛있', '급식', '먹']</li>
 </ul>
 
 <h1 id="license">License</h1>
@@ -147,16 +147,16 @@ niadic_py    </h1>
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd"># Tokenizer Example</span>
 </span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">* input : &quot;저는 오늘 아침에 하나의 빵을 먹고 학교로 급하게 갔습니다.&quot;</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">* output : [&#39;저&#39;, &#39;오늘&#39;, &#39;아침&#39;, &#39;하나&#39;, &#39;빵&#39;, &#39;먹&#39;, &#39;학교&#39;, &#39;급하&#39;, &#39;갔습니&#39;]</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">* input : &quot;우리는 도서관에서 재미있는 책을 읽고 맛있는 급식을 먹었습니다.&quot;</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">* output : [&#39;우리&#39;, &#39;도서관&#39;, &#39;재미있&#39;, &#39;책&#39;, &#39;읽&#39;, &#39;맛있&#39;, &#39;급식&#39;, &#39;먹&#39;]</span>
 </span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>
 </span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd"># License</span>
 </span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>
 </span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">&#39;NIADic_py&#39; contains the bundled NIADic files and available under the CC BY-SA 2.0 license.</span>
 </span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>
 </span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="kn">from</span> <span class="nn">niadic_py.services.file_service</span> <span class="kn">import</span> <span class="n">FileService</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="kn">from</span> <span class="nn">niadic_py.services.tokenizer_service</span> <span class="kn">import</span> <span class="n">TokenizerService</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">niadic_py.services.file_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileService</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">niadic_py.services.tokenizer_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenizerService</span>
 </span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>
 </span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;FileService&quot;</span><span class="p">,</span> <span class="s2">&quot;TokenizerService&quot;</span><span class="p">]</span>
 </span></pre></div>
@@ -174,7 +174,7 @@ niadic_py    </h1>
 
     </div>
     <a class="headerlink" href="#FileService"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService-11"><a href="#FileService-11"><span class="linenos"> 11</span></a><span class="k">class</span> <span class="nc">FileService</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService-11"><a href="#FileService-11"><span class="linenos"> 11</span></a><span class="k">class</span><span class="w"> </span><span class="nc">FileService</span><span class="p">:</span>
 </span><span id="FileService-12"><a href="#FileService-12"><span class="linenos"> 12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-13"><a href="#FileService-13"><span class="linenos"> 13</span></a><span class="sd">    NIADic File class</span>
 </span><span id="FileService-14"><a href="#FileService-14"><span class="linenos"> 14</span></a>
@@ -194,7 +194,7 @@ niadic_py    </h1>
 </span><span id="FileService-28"><a href="#FileService-28"><span class="linenos"> 28</span></a><span class="sd">    special_characters = file.search_category(keyword=&quot;special_characters&quot;, regex=False)</span>
 </span><span id="FileService-29"><a href="#FileService-29"><span class="linenos"> 29</span></a><span class="sd">    ```</span>
 </span><span id="FileService-30"><a href="#FileService-30"><span class="linenos"> 30</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="FileService-31"><a href="#FileService-31"><span class="linenos"> 31</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">display_max_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="FileService-31"><a href="#FileService-31"><span class="linenos"> 31</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">display_max_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="FileService-32"><a href="#FileService-32"><span class="linenos"> 32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-33"><a href="#FileService-33"><span class="linenos"> 33</span></a><span class="sd">        NIADic File init class</span>
 </span><span id="FileService-34"><a href="#FileService-34"><span class="linenos"> 34</span></a><span class="sd">        :param file_type: NIADic file type (&quot;csv&quot;, &quot;xlsx&quot;), Default Value = csv</span>
@@ -204,7 +204,7 @@ niadic_py    </h1>
 </span><span id="FileService-38"><a href="#FileService-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__display_max_rows</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">display_max_rows</span>
 </span><span id="FileService-39"><a href="#FileService-39"><span class="linenos"> 39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">:</span> <span class="n">DataFrame</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">()</span>
 </span><span id="FileService-40"><a href="#FileService-40"><span class="linenos"> 40</span></a>
-</span><span id="FileService-41"><a href="#FileService-41"><span class="linenos"> 41</span></a>    <span class="k">def</span> <span class="nf">import_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="FileService-41"><a href="#FileService-41"><span class="linenos"> 41</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">import_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService-42"><a href="#FileService-42"><span class="linenos"> 42</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-43"><a href="#FileService-43"><span class="linenos"> 43</span></a><span class="sd">        Choose between Excel or CSV file to set up index.</span>
 </span><span id="FileService-44"><a href="#FileService-44"><span class="linenos"> 44</span></a><span class="sd">        :return: DataFrame</span>
@@ -219,35 +219,35 @@ niadic_py    </h1>
 </span><span id="FileService-53"><a href="#FileService-53"><span class="linenos"> 53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;term&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="FileService-54"><a href="#FileService-54"><span class="linenos"> 54</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span>
 </span><span id="FileService-55"><a href="#FileService-55"><span class="linenos"> 55</span></a>
-</span><span id="FileService-56"><a href="#FileService-56"><span class="linenos"> 56</span></a>    <span class="k">def</span> <span class="nf">get_all_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="FileService-56"><a href="#FileService-56"><span class="linenos"> 56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_all_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService-57"><a href="#FileService-57"><span class="linenos"> 57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-58"><a href="#FileService-58"><span class="linenos"> 58</span></a><span class="sd">        Query all data in a DataFrame.</span>
 </span><span id="FileService-59"><a href="#FileService-59"><span class="linenos"> 59</span></a><span class="sd">        :return: DataFrame</span>
 </span><span id="FileService-60"><a href="#FileService-60"><span class="linenos"> 60</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-61"><a href="#FileService-61"><span class="linenos"> 61</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span>
 </span><span id="FileService-62"><a href="#FileService-62"><span class="linenos"> 62</span></a>
-</span><span id="FileService-63"><a href="#FileService-63"><span class="linenos"> 63</span></a>    <span class="k">def</span> <span class="nf">get_term_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+</span><span id="FileService-63"><a href="#FileService-63"><span class="linenos"> 63</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_term_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService-64"><a href="#FileService-64"><span class="linenos"> 64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-65"><a href="#FileService-65"><span class="linenos"> 65</span></a><span class="sd">        Query term Series in a DataFrame.</span>
 </span><span id="FileService-66"><a href="#FileService-66"><span class="linenos"> 66</span></a><span class="sd">        :return: term Series</span>
 </span><span id="FileService-67"><a href="#FileService-67"><span class="linenos"> 67</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-68"><a href="#FileService-68"><span class="linenos"> 68</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="o">.</span><span class="n">index</span>
 </span><span id="FileService-69"><a href="#FileService-69"><span class="linenos"> 69</span></a>
-</span><span id="FileService-70"><a href="#FileService-70"><span class="linenos"> 70</span></a>    <span class="k">def</span> <span class="nf">get_tag_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+</span><span id="FileService-70"><a href="#FileService-70"><span class="linenos"> 70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_tag_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService-71"><a href="#FileService-71"><span class="linenos"> 71</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-72"><a href="#FileService-72"><span class="linenos"> 72</span></a><span class="sd">        Query tag Series in a DataFrame.</span>
 </span><span id="FileService-73"><a href="#FileService-73"><span class="linenos"> 73</span></a><span class="sd">        :return: tag Series</span>
 </span><span id="FileService-74"><a href="#FileService-74"><span class="linenos"> 74</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-75"><a href="#FileService-75"><span class="linenos"> 75</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">[</span><span class="s2">&quot;tag&quot;</span><span class="p">]</span>
 </span><span id="FileService-76"><a href="#FileService-76"><span class="linenos"> 76</span></a>
-</span><span id="FileService-77"><a href="#FileService-77"><span class="linenos"> 77</span></a>    <span class="k">def</span> <span class="nf">get_category_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+</span><span id="FileService-77"><a href="#FileService-77"><span class="linenos"> 77</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_category_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService-78"><a href="#FileService-78"><span class="linenos"> 78</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-79"><a href="#FileService-79"><span class="linenos"> 79</span></a><span class="sd">        Query category Series in a DataFrame.</span>
 </span><span id="FileService-80"><a href="#FileService-80"><span class="linenos"> 80</span></a><span class="sd">        :return: category Series</span>
 </span><span id="FileService-81"><a href="#FileService-81"><span class="linenos"> 81</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-82"><a href="#FileService-82"><span class="linenos"> 82</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span>
 </span><span id="FileService-83"><a href="#FileService-83"><span class="linenos"> 83</span></a>
-</span><span id="FileService-84"><a href="#FileService-84"><span class="linenos"> 84</span></a>    <span class="k">def</span> <span class="nf">search_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="FileService-84"><a href="#FileService-84"><span class="linenos"> 84</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService-85"><a href="#FileService-85"><span class="linenos"> 85</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-86"><a href="#FileService-86"><span class="linenos"> 86</span></a><span class="sd">        Search for term data in the DataFrame.</span>
 </span><span id="FileService-87"><a href="#FileService-87"><span class="linenos"> 87</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -259,7 +259,7 @@ niadic_py    </h1>
 </span><span id="FileService-93"><a href="#FileService-93"><span class="linenos"> 93</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-94"><a href="#FileService-94"><span class="linenos"> 94</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="n">case</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">regex</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="n">na</span><span class="p">)]</span>
 </span><span id="FileService-95"><a href="#FileService-95"><span class="linenos"> 95</span></a>
-</span><span id="FileService-96"><a href="#FileService-96"><span class="linenos"> 96</span></a>    <span class="k">def</span> <span class="nf">search_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="FileService-96"><a href="#FileService-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService-97"><a href="#FileService-97"><span class="linenos"> 97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-98"><a href="#FileService-98"><span class="linenos"> 98</span></a><span class="sd">        Search for search data in the DataFrame.</span>
 </span><span id="FileService-99"><a href="#FileService-99"><span class="linenos"> 99</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -271,7 +271,7 @@ niadic_py    </h1>
 </span><span id="FileService-105"><a href="#FileService-105"><span class="linenos">105</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FileService-106"><a href="#FileService-106"><span class="linenos">106</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="n">case</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">regex</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="n">na</span><span class="p">)]</span>
 </span><span id="FileService-107"><a href="#FileService-107"><span class="linenos">107</span></a>
-</span><span id="FileService-108"><a href="#FileService-108"><span class="linenos">108</span></a>    <span class="k">def</span> <span class="nf">search_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="FileService-108"><a href="#FileService-108"><span class="linenos">108</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService-109"><a href="#FileService-109"><span class="linenos">109</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService-110"><a href="#FileService-110"><span class="linenos">110</span></a><span class="sd">        Search for category data in the DataFrame.</span>
 </span><span id="FileService-111"><a href="#FileService-111"><span class="linenos">111</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -288,7 +288,7 @@ niadic_py    </h1>
             <div class="docstring"><p>NIADic File class</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="kn">from</span> <span class="nn">niadic_py.services.file_service</span> <span class="kn">import</span> <span class="n">FileService</span>
+<pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">niadic_py.services.file_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileService</span>
 
 <span class="n">file</span> <span class="o">=</span> <span class="n">FileService</span><span class="p">(</span><span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>
 <span class="n">file</span><span class="o">.</span><span class="n">import_file</span><span class="p">()</span>
@@ -316,7 +316,7 @@ niadic_py    </h1>
 
     </div>
     <a class="headerlink" href="#FileService.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.__init__-31"><a href="#FileService.__init__-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">display_max_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.__init__-31"><a href="#FileService.__init__-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">display_max_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="FileService.__init__-32"><a href="#FileService.__init__-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.__init__-33"><a href="#FileService.__init__-33"><span class="linenos">33</span></a><span class="sd">        NIADic File init class</span>
 </span><span id="FileService.__init__-34"><a href="#FileService.__init__-34"><span class="linenos">34</span></a><span class="sd">        :param file_type: NIADic file type (&quot;csv&quot;, &quot;xlsx&quot;), Default Value = csv</span>
@@ -345,13 +345,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">import_file</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+        <span class="name">import_file</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.import_file-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.import_file"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.import_file-41"><a href="#FileService.import_file-41"><span class="linenos">41</span></a>    <span class="k">def</span> <span class="nf">import_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.import_file-41"><a href="#FileService.import_file-41"><span class="linenos">41</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">import_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService.import_file-42"><a href="#FileService.import_file-42"><span class="linenos">42</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.import_file-43"><a href="#FileService.import_file-43"><span class="linenos">43</span></a><span class="sd">        Choose between Excel or CSV file to set up index.</span>
 </span><span id="FileService.import_file-44"><a href="#FileService.import_file-44"><span class="linenos">44</span></a><span class="sd">        :return: DataFrame</span>
@@ -384,13 +384,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">get_all_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+        <span class="name">get_all_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.get_all_column-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.get_all_column"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_all_column-56"><a href="#FileService.get_all_column-56"><span class="linenos">56</span></a>    <span class="k">def</span> <span class="nf">get_all_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_all_column-56"><a href="#FileService.get_all_column-56"><span class="linenos">56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_all_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService.get_all_column-57"><a href="#FileService.get_all_column-57"><span class="linenos">57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.get_all_column-58"><a href="#FileService.get_all_column-58"><span class="linenos">58</span></a><span class="sd">        Query all data in a DataFrame.</span>
 </span><span id="FileService.get_all_column-59"><a href="#FileService.get_all_column-59"><span class="linenos">59</span></a><span class="sd">        :return: DataFrame</span>
@@ -415,13 +415,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">get_term_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span>:</span></span>
+        <span class="name">get_term_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.get_term_column-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.get_term_column"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_term_column-63"><a href="#FileService.get_term_column-63"><span class="linenos">63</span></a>    <span class="k">def</span> <span class="nf">get_term_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_term_column-63"><a href="#FileService.get_term_column-63"><span class="linenos">63</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_term_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService.get_term_column-64"><a href="#FileService.get_term_column-64"><span class="linenos">64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.get_term_column-65"><a href="#FileService.get_term_column-65"><span class="linenos">65</span></a><span class="sd">        Query term Series in a DataFrame.</span>
 </span><span id="FileService.get_term_column-66"><a href="#FileService.get_term_column-66"><span class="linenos">66</span></a><span class="sd">        :return: term Series</span>
@@ -446,13 +446,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">get_tag_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span>:</span></span>
+        <span class="name">get_tag_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.get_tag_column-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.get_tag_column"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_tag_column-70"><a href="#FileService.get_tag_column-70"><span class="linenos">70</span></a>    <span class="k">def</span> <span class="nf">get_tag_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_tag_column-70"><a href="#FileService.get_tag_column-70"><span class="linenos">70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_tag_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService.get_tag_column-71"><a href="#FileService.get_tag_column-71"><span class="linenos">71</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.get_tag_column-72"><a href="#FileService.get_tag_column-72"><span class="linenos">72</span></a><span class="sd">        Query tag Series in a DataFrame.</span>
 </span><span id="FileService.get_tag_column-73"><a href="#FileService.get_tag_column-73"><span class="linenos">73</span></a><span class="sd">        :return: tag Series</span>
@@ -477,13 +477,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">get_category_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span>:</span></span>
+        <span class="name">get_category_column</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.get_category_column-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.get_category_column"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_category_column-77"><a href="#FileService.get_category_column-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">get_category_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.get_category_column-77"><a href="#FileService.get_category_column-77"><span class="linenos">77</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_category_column</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
 </span><span id="FileService.get_category_column-78"><a href="#FileService.get_category_column-78"><span class="linenos">78</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.get_category_column-79"><a href="#FileService.get_category_column-79"><span class="linenos">79</span></a><span class="sd">        Query category Series in a DataFrame.</span>
 </span><span id="FileService.get_category_column-80"><a href="#FileService.get_category_column-80"><span class="linenos">80</span></a><span class="sd">        :return: category Series</span>
@@ -508,13 +508,13 @@ niadic_py    </h1>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">search_term</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">case</span><span class="o">=</span><span class="kc">False</span>,</span><span class="param">	<span class="n">na</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+        <span class="name">search_term</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">case</span><span class="o">=</span><span class="kc">False</span>, </span><span class="param"><span class="n">na</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.search_term-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.search_term"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_term-84"><a href="#FileService.search_term-84"><span class="linenos">84</span></a>    <span class="k">def</span> <span class="nf">search_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_term-84"><a href="#FileService.search_term-84"><span class="linenos">84</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService.search_term-85"><a href="#FileService.search_term-85"><span class="linenos">85</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.search_term-86"><a href="#FileService.search_term-86"><span class="linenos">86</span></a><span class="sd">        Search for term data in the DataFrame.</span>
 </span><span id="FileService.search_term-87"><a href="#FileService.search_term-87"><span class="linenos">87</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -554,13 +554,13 @@ If False, treats the keyword as a literal string.</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">search_tag</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">case</span><span class="o">=</span><span class="kc">False</span>,</span><span class="param">	<span class="n">na</span><span class="o">=</span><span class="kc">None</span>,</span><span class="param">	<span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+        <span class="name">search_tag</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">case</span><span class="o">=</span><span class="kc">False</span>, </span><span class="param"><span class="n">na</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.search_tag-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.search_tag"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_tag-96"><a href="#FileService.search_tag-96"><span class="linenos"> 96</span></a>    <span class="k">def</span> <span class="nf">search_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_tag-96"><a href="#FileService.search_tag-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService.search_tag-97"><a href="#FileService.search_tag-97"><span class="linenos"> 97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.search_tag-98"><a href="#FileService.search_tag-98"><span class="linenos"> 98</span></a><span class="sd">        Search for search data in the DataFrame.</span>
 </span><span id="FileService.search_tag-99"><a href="#FileService.search_tag-99"><span class="linenos"> 99</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -600,13 +600,13 @@ If False, treats the keyword as a literal string.</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">search_category</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">case</span><span class="o">=</span><span class="kc">False</span>,</span><span class="param">	<span class="n">na</span><span class="o">=</span><span class="kc">False</span>,</span><span class="param">	<span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+        <span class="name">search_category</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">case</span><span class="o">=</span><span class="kc">False</span>, </span><span class="param"><span class="n">na</span><span class="o">=</span><span class="kc">False</span>, </span><span class="param"><span class="n">regex</span><span class="o">=</span><span class="kc">True</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
 
                 <label class="view-source-button" for="FileService.search_category-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FileService.search_category"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_category-108"><a href="#FileService.search_category-108"><span class="linenos">108</span></a>    <span class="k">def</span> <span class="nf">search_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FileService.search_category-108"><a href="#FileService.search_category-108"><span class="linenos">108</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="FileService.search_category-109"><a href="#FileService.search_category-109"><span class="linenos">109</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="FileService.search_category-110"><a href="#FileService.search_category-110"><span class="linenos">110</span></a><span class="sd">        Search for category data in the DataFrame.</span>
 </span><span id="FileService.search_category-111"><a href="#FileService.search_category-111"><span class="linenos">111</span></a><span class="sd">        :param keyword: Character sequence or regular expression.</span>
@@ -653,63 +653,95 @@ If False, treats the keyword as a literal string.</li>
 
     </div>
     <a class="headerlink" href="#TokenizerService"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService-9"><a href="#TokenizerService-9"><span class="linenos"> 9</span></a><span class="k">class</span> <span class="nc">TokenizerService</span><span class="p">:</span>
-</span><span id="TokenizerService-10"><a href="#TokenizerService-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService-11"><a href="#TokenizerService-11"><span class="linenos">11</span></a><span class="sd">    NIADic Tokenizer class</span>
-</span><span id="TokenizerService-12"><a href="#TokenizerService-12"><span class="linenos">12</span></a><span class="sd">    .. warning:: This feature is experimental.</span>
-</span><span id="TokenizerService-13"><a href="#TokenizerService-13"><span class="linenos">13</span></a>
-</span><span id="TokenizerService-14"><a href="#TokenizerService-14"><span class="linenos">14</span></a><span class="sd">    ```python</span>
-</span><span id="TokenizerService-15"><a href="#TokenizerService-15"><span class="linenos">15</span></a><span class="sd">    from niadic_py.services.tokenizer_service import TokenizerService</span>
-</span><span id="TokenizerService-16"><a href="#TokenizerService-16"><span class="linenos">16</span></a>
-</span><span id="TokenizerService-17"><a href="#TokenizerService-17"><span class="linenos">17</span></a><span class="sd">    file = FileService(file_type=&quot;csv&quot;)</span>
-</span><span id="TokenizerService-18"><a href="#TokenizerService-18"><span class="linenos">18</span></a><span class="sd">    file.import_file()</span>
-</span><span id="TokenizerService-19"><a href="#TokenizerService-19"><span class="linenos">19</span></a><span class="sd">    example = &quot;저는 오늘 아침에 하나의 빵을 먹고 학교로 급하게 갔습니다.&quot;</span>
-</span><span id="TokenizerService-20"><a href="#TokenizerService-20"><span class="linenos">20</span></a><span class="sd">    token = TokenizerService(file.get_all_column(), string=example).tokenizer()</span>
-</span><span id="TokenizerService-21"><a href="#TokenizerService-21"><span class="linenos">21</span></a><span class="sd">    ```</span>
-</span><span id="TokenizerService-22"><a href="#TokenizerService-22"><span class="linenos">22</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="TokenizerService-23"><a href="#TokenizerService-23"><span class="linenos">23</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
-</span><span id="TokenizerService-24"><a href="#TokenizerService-24"><span class="linenos">24</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService-25"><a href="#TokenizerService-25"><span class="linenos">25</span></a><span class="sd">        NIADic Tokenizer init</span>
-</span><span id="TokenizerService-26"><a href="#TokenizerService-26"><span class="linenos">26</span></a><span class="sd">        :param string: input string</span>
-</span><span id="TokenizerService-27"><a href="#TokenizerService-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService-28"><a href="#TokenizerService-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">string</span>
-</span><span id="TokenizerService-29"><a href="#TokenizerService-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">:</span> <span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span>
-</span><span id="TokenizerService-30"><a href="#TokenizerService-30"><span class="linenos">30</span></a>
-</span><span id="TokenizerService-31"><a href="#TokenizerService-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">__clean_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TokenizerService-32"><a href="#TokenizerService-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService-33"><a href="#TokenizerService-33"><span class="linenos">33</span></a><span class="sd">        Clean up sentences by removing special symbols.</span>
-</span><span id="TokenizerService-34"><a href="#TokenizerService-34"><span class="linenos">34</span></a><span class="sd">        :return: sentences</span>
-</span><span id="TokenizerService-35"><a href="#TokenizerService-35"><span class="linenos">35</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService-36"><a href="#TokenizerService-36"><span class="linenos">36</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^\uAC00-\uD7A30-9a-zA-Z\s]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span><span class="p">)</span>
-</span><span id="TokenizerService-37"><a href="#TokenizerService-37"><span class="linenos">37</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span>
-</span><span id="TokenizerService-38"><a href="#TokenizerService-38"><span class="linenos">38</span></a>
-</span><span id="TokenizerService-39"><a href="#TokenizerService-39"><span class="linenos">39</span></a>    <span class="k">def</span> <span class="nf">__remove_ending</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-</span><span id="TokenizerService-40"><a href="#TokenizerService-40"><span class="linenos">40</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService-41"><a href="#TokenizerService-41"><span class="linenos">41</span></a><span class="sd">        Clean up sentences by removing ending tag.</span>
-</span><span id="TokenizerService-42"><a href="#TokenizerService-42"><span class="linenos">42</span></a><span class="sd">        :param text:</span>
-</span><span id="TokenizerService-43"><a href="#TokenizerService-43"><span class="linenos">43</span></a><span class="sd">        :return:</span>
-</span><span id="TokenizerService-44"><a href="#TokenizerService-44"><span class="linenos">44</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService-45"><a href="#TokenizerService-45"><span class="linenos">45</span></a>        <span class="n">end_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;^e&quot;</span><span class="p">)]</span>
-</span><span id="TokenizerService-46"><a href="#TokenizerService-46"><span class="linenos">46</span></a>        <span class="n">index_list</span> <span class="o">=</span> <span class="n">end_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-</span><span id="TokenizerService-47"><a href="#TokenizerService-47"><span class="linenos">47</span></a>        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">index_list</span><span class="p">:</span>
-</span><span id="TokenizerService-48"><a href="#TokenizerService-48"><span class="linenos">48</span></a>            <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
-</span><span id="TokenizerService-49"><a href="#TokenizerService-49"><span class="linenos">49</span></a>                <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span>
-</span><span id="TokenizerService-50"><a href="#TokenizerService-50"><span class="linenos">50</span></a>                <span class="k">break</span>
-</span><span id="TokenizerService-51"><a href="#TokenizerService-51"><span class="linenos">51</span></a>        <span class="k">return</span> <span class="n">text</span>
-</span><span id="TokenizerService-52"><a href="#TokenizerService-52"><span class="linenos">52</span></a>
-</span><span id="TokenizerService-53"><a href="#TokenizerService-53"><span class="linenos">53</span></a>    <span class="k">def</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TokenizerService-54"><a href="#TokenizerService-54"><span class="linenos">54</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService-55"><a href="#TokenizerService-55"><span class="linenos">55</span></a><span class="sd">        Extract meaningful words from given sentence.</span>
-</span><span id="TokenizerService-56"><a href="#TokenizerService-56"><span class="linenos">56</span></a><span class="sd">        :return: Words list</span>
-</span><span id="TokenizerService-57"><a href="#TokenizerService-57"><span class="linenos">57</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService-58"><a href="#TokenizerService-58"><span class="linenos">58</span></a>        <span class="n">words_candidate</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="TokenizerService-59"><a href="#TokenizerService-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__clean_text</span><span class="p">()</span>
-</span><span id="TokenizerService-60"><a href="#TokenizerService-60"><span class="linenos">60</span></a>
-</span><span id="TokenizerService-61"><a href="#TokenizerService-61"><span class="linenos">61</span></a>        <span class="n">split_words</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</span><span id="TokenizerService-62"><a href="#TokenizerService-62"><span class="linenos">62</span></a>        <span class="k">for</span> <span class="n">split_word</span> <span class="ow">in</span> <span class="n">split_words</span><span class="p">:</span>
-</span><span id="TokenizerService-63"><a href="#TokenizerService-63"><span class="linenos">63</span></a>            <span class="n">clear_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__remove_ending</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">split_word</span><span class="p">)</span>
-</span><span id="TokenizerService-64"><a href="#TokenizerService-64"><span class="linenos">64</span></a>            <span class="n">words_candidate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clear_end</span><span class="p">)</span>
-</span><span id="TokenizerService-65"><a href="#TokenizerService-65"><span class="linenos">65</span></a>        <span class="k">return</span> <span class="n">words_candidate</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService-10"><a href="#TokenizerService-10"><span class="linenos">10</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TokenizerService</span><span class="p">:</span>
+</span><span id="TokenizerService-11"><a href="#TokenizerService-11"><span class="linenos">11</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-12"><a href="#TokenizerService-12"><span class="linenos">12</span></a><span class="sd">    NIADic Tokenizer class</span>
+</span><span id="TokenizerService-13"><a href="#TokenizerService-13"><span class="linenos">13</span></a><span class="sd">    .. warning:: This feature is experimental.</span>
+</span><span id="TokenizerService-14"><a href="#TokenizerService-14"><span class="linenos">14</span></a>
+</span><span id="TokenizerService-15"><a href="#TokenizerService-15"><span class="linenos">15</span></a><span class="sd">    ```python</span>
+</span><span id="TokenizerService-16"><a href="#TokenizerService-16"><span class="linenos">16</span></a><span class="sd">    from niadic_py.services.tokenizer_service import TokenizerService</span>
+</span><span id="TokenizerService-17"><a href="#TokenizerService-17"><span class="linenos">17</span></a>
+</span><span id="TokenizerService-18"><a href="#TokenizerService-18"><span class="linenos">18</span></a><span class="sd">    file = FileService(file_type=&quot;csv&quot;)</span>
+</span><span id="TokenizerService-19"><a href="#TokenizerService-19"><span class="linenos">19</span></a><span class="sd">    file.import_file()</span>
+</span><span id="TokenizerService-20"><a href="#TokenizerService-20"><span class="linenos">20</span></a><span class="sd">    example = &quot;저는 오늘 아침에 하나의 빵을 먹고 학교로 급하게 갔습니다.&quot;</span>
+</span><span id="TokenizerService-21"><a href="#TokenizerService-21"><span class="linenos">21</span></a><span class="sd">    token = TokenizerService(file.get_all_column(), string=example).tokenizer()</span>
+</span><span id="TokenizerService-22"><a href="#TokenizerService-22"><span class="linenos">22</span></a><span class="sd">    ```</span>
+</span><span id="TokenizerService-23"><a href="#TokenizerService-23"><span class="linenos">23</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-24"><a href="#TokenizerService-24"><span class="linenos">24</span></a>    <span class="n">_CLEAN_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^\uAC00-\uD7A30-9a-zA-Z\s]&quot;</span><span class="p">)</span>
+</span><span id="TokenizerService-25"><a href="#TokenizerService-25"><span class="linenos">25</span></a>
+</span><span id="TokenizerService-26"><a href="#TokenizerService-26"><span class="linenos">26</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="TokenizerService-27"><a href="#TokenizerService-27"><span class="linenos">27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-28"><a href="#TokenizerService-28"><span class="linenos">28</span></a><span class="sd">        NIADic Tokenizer init</span>
+</span><span id="TokenizerService-29"><a href="#TokenizerService-29"><span class="linenos">29</span></a><span class="sd">        :param df: DataFrame containing dictionary data</span>
+</span><span id="TokenizerService-30"><a href="#TokenizerService-30"><span class="linenos">30</span></a><span class="sd">        :param string: input string</span>
+</span><span id="TokenizerService-31"><a href="#TokenizerService-31"><span class="linenos">31</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-32"><a href="#TokenizerService-32"><span class="linenos">32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">string</span>
+</span><span id="TokenizerService-33"><a href="#TokenizerService-33"><span class="linenos">33</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">:</span> <span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span>
+</span><span id="TokenizerService-34"><a href="#TokenizerService-34"><span class="linenos">34</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</span><span id="TokenizerService-35"><a href="#TokenizerService-35"><span class="linenos">35</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_endings</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_endings</span><span class="p">()</span>
+</span><span id="TokenizerService-36"><a href="#TokenizerService-36"><span class="linenos">36</span></a>
+</span><span id="TokenizerService-37"><a href="#TokenizerService-37"><span class="linenos">37</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_extract_endings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="TokenizerService-38"><a href="#TokenizerService-38"><span class="linenos">38</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-39"><a href="#TokenizerService-39"><span class="linenos">39</span></a><span class="sd">        Extract and sort ending and particle tags from the DataFrame.</span>
+</span><span id="TokenizerService-40"><a href="#TokenizerService-40"><span class="linenos">40</span></a><span class="sd">        Pre-computation improves performance by avoiding repeated DataFrame filtering.</span>
+</span><span id="TokenizerService-41"><a href="#TokenizerService-41"><span class="linenos">41</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-42"><a href="#TokenizerService-42"><span class="linenos">42</span></a>        <span class="c1"># Filter for tags starting with &#39;e&#39; (endings) or &#39;j&#39; (particles/josa)</span>
+</span><span id="TokenizerService-43"><a href="#TokenizerService-43"><span class="linenos">43</span></a>        <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^[ej]&#39;</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="TokenizerService-44"><a href="#TokenizerService-44"><span class="linenos">44</span></a>        <span class="n">endings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="TokenizerService-45"><a href="#TokenizerService-45"><span class="linenos">45</span></a>
+</span><span id="TokenizerService-46"><a href="#TokenizerService-46"><span class="linenos">46</span></a>        <span class="c1"># Sort by length in descending order to match longest suffixes first</span>
+</span><span id="TokenizerService-47"><a href="#TokenizerService-47"><span class="linenos">47</span></a>        <span class="n">endings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="TokenizerService-48"><a href="#TokenizerService-48"><span class="linenos">48</span></a>        <span class="k">return</span> <span class="n">endings</span>
+</span><span id="TokenizerService-49"><a href="#TokenizerService-49"><span class="linenos">49</span></a>
+</span><span id="TokenizerService-50"><a href="#TokenizerService-50"><span class="linenos">50</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_clean_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="TokenizerService-51"><a href="#TokenizerService-51"><span class="linenos">51</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-52"><a href="#TokenizerService-52"><span class="linenos">52</span></a><span class="sd">        Clean up sentences by removing special symbols.</span>
+</span><span id="TokenizerService-53"><a href="#TokenizerService-53"><span class="linenos">53</span></a><span class="sd">        :param text: input text</span>
+</span><span id="TokenizerService-54"><a href="#TokenizerService-54"><span class="linenos">54</span></a><span class="sd">        :return: cleaned text</span>
+</span><span id="TokenizerService-55"><a href="#TokenizerService-55"><span class="linenos">55</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-56"><a href="#TokenizerService-56"><span class="linenos">56</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLEAN_PATTERN</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span><span id="TokenizerService-57"><a href="#TokenizerService-57"><span class="linenos">57</span></a>
+</span><span id="TokenizerService-58"><a href="#TokenizerService-58"><span class="linenos">58</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_process_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="TokenizerService-59"><a href="#TokenizerService-59"><span class="linenos">59</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-60"><a href="#TokenizerService-60"><span class="linenos">60</span></a><span class="sd">        Process a token to find its stem by removing endings/particles recursively.</span>
+</span><span id="TokenizerService-61"><a href="#TokenizerService-61"><span class="linenos">61</span></a><span class="sd">        Validates the stem against the dictionary.</span>
+</span><span id="TokenizerService-62"><a href="#TokenizerService-62"><span class="linenos">62</span></a><span class="sd">        Also checks for predicate base forms (stem + &#39;다&#39;).</span>
+</span><span id="TokenizerService-63"><a href="#TokenizerService-63"><span class="linenos">63</span></a><span class="sd">        :param text: word to process</span>
+</span><span id="TokenizerService-64"><a href="#TokenizerService-64"><span class="linenos">64</span></a><span class="sd">        :return: stem (or base form) if found and valid, otherwise original text</span>
+</span><span id="TokenizerService-65"><a href="#TokenizerService-65"><span class="linenos">65</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-66"><a href="#TokenizerService-66"><span class="linenos">66</span></a>        <span class="c1"># 1. If the word itself is in the dictionary, return it.</span>
+</span><span id="TokenizerService-67"><a href="#TokenizerService-67"><span class="linenos">67</span></a>        <span class="k">if</span> <span class="n">text</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span><span class="p">:</span>
+</span><span id="TokenizerService-68"><a href="#TokenizerService-68"><span class="linenos">68</span></a>            <span class="k">return</span> <span class="n">text</span>
+</span><span id="TokenizerService-69"><a href="#TokenizerService-69"><span class="linenos">69</span></a>
+</span><span id="TokenizerService-70"><a href="#TokenizerService-70"><span class="linenos">70</span></a>        <span class="c1"># 2. Check predicate base form (Stem + &#39;다&#39;)</span>
+</span><span id="TokenizerService-71"><a href="#TokenizerService-71"><span class="linenos">71</span></a>        <span class="c1"># This handles verbs/adjectives where the dictionary entry ends with &#39;다&#39;</span>
+</span><span id="TokenizerService-72"><a href="#TokenizerService-72"><span class="linenos">72</span></a>        <span class="n">stem_da</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;다&quot;</span>
+</span><span id="TokenizerService-73"><a href="#TokenizerService-73"><span class="linenos">73</span></a>        <span class="k">if</span> <span class="n">stem_da</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span><span class="p">:</span>
+</span><span id="TokenizerService-74"><a href="#TokenizerService-74"><span class="linenos">74</span></a>            <span class="k">return</span> <span class="n">text</span>
+</span><span id="TokenizerService-75"><a href="#TokenizerService-75"><span class="linenos">75</span></a>
+</span><span id="TokenizerService-76"><a href="#TokenizerService-76"><span class="linenos">76</span></a>        <span class="c1"># 3. Try to strip endings/particles recursively</span>
+</span><span id="TokenizerService-77"><a href="#TokenizerService-77"><span class="linenos">77</span></a>        <span class="k">for</span> <span class="n">ending</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endings</span><span class="p">:</span>
+</span><span id="TokenizerService-78"><a href="#TokenizerService-78"><span class="linenos">78</span></a>            <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ending</span><span class="p">):</span>
+</span><span id="TokenizerService-79"><a href="#TokenizerService-79"><span class="linenos">79</span></a>                <span class="n">stem</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">ending</span><span class="p">)]</span>
+</span><span id="TokenizerService-80"><a href="#TokenizerService-80"><span class="linenos">80</span></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">stem</span><span class="p">:</span>
+</span><span id="TokenizerService-81"><a href="#TokenizerService-81"><span class="linenos">81</span></a>                    <span class="k">continue</span>
+</span><span id="TokenizerService-82"><a href="#TokenizerService-82"><span class="linenos">82</span></a>
+</span><span id="TokenizerService-83"><a href="#TokenizerService-83"><span class="linenos">83</span></a>                <span class="c1"># Recursive call to handle multiple suffixes (e.g., 었+습니다)</span>
+</span><span id="TokenizerService-84"><a href="#TokenizerService-84"><span class="linenos">84</span></a>                <span class="n">found_stem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_token</span><span class="p">(</span><span class="n">stem</span><span class="p">)</span>
+</span><span id="TokenizerService-85"><a href="#TokenizerService-85"><span class="linenos">85</span></a>                <span class="k">if</span> <span class="n">found_stem</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span> <span class="ow">or</span> <span class="p">(</span><span class="n">found_stem</span> <span class="o">+</span> <span class="s2">&quot;다&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span><span class="p">:</span>
+</span><span id="TokenizerService-86"><a href="#TokenizerService-86"><span class="linenos">86</span></a>                    <span class="k">return</span> <span class="n">found_stem</span>
+</span><span id="TokenizerService-87"><a href="#TokenizerService-87"><span class="linenos">87</span></a>
+</span><span id="TokenizerService-88"><a href="#TokenizerService-88"><span class="linenos">88</span></a>        <span class="k">return</span> <span class="n">text</span>
+</span><span id="TokenizerService-89"><a href="#TokenizerService-89"><span class="linenos">89</span></a>
+</span><span id="TokenizerService-90"><a href="#TokenizerService-90"><span class="linenos">90</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="TokenizerService-91"><a href="#TokenizerService-91"><span class="linenos">91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService-92"><a href="#TokenizerService-92"><span class="linenos">92</span></a><span class="sd">        Extract meaningful words from given sentence.</span>
+</span><span id="TokenizerService-93"><a href="#TokenizerService-93"><span class="linenos">93</span></a><span class="sd">        :return: Words list</span>
+</span><span id="TokenizerService-94"><a href="#TokenizerService-94"><span class="linenos">94</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService-95"><a href="#TokenizerService-95"><span class="linenos">95</span></a>        <span class="n">cleaned_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_string</span><span class="p">)</span>
+</span><span id="TokenizerService-96"><a href="#TokenizerService-96"><span class="linenos">96</span></a>        <span class="n">split_words</span> <span class="o">=</span> <span class="n">cleaned_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span><span id="TokenizerService-97"><a href="#TokenizerService-97"><span class="linenos">97</span></a>        
+</span><span id="TokenizerService-98"><a href="#TokenizerService-98"><span class="linenos">98</span></a>        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_token</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_words</span><span class="p">]</span>
 </span></pre></div>
 
 
@@ -722,7 +754,7 @@ If False, treats the keyword as a literal string.</li>
 </div>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="kn">from</span> <span class="nn">niadic_py.services.tokenizer_service</span> <span class="kn">import</span> <span class="n">TokenizerService</span>
+<pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">niadic_py.services.tokenizer_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenizerService</span>
 
 <span class="n">file</span> <span class="o">=</span> <span class="n">FileService</span><span class="p">(</span><span class="n">file_type</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>
 <span class="n">file</span><span class="o">.</span><span class="n">import_file</span><span class="p">()</span>
@@ -737,19 +769,22 @@ If False, treats the keyword as a literal string.</li>
                                         <input id="TokenizerService.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">TokenizerService</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">df</span>, </span><span class="param"><span class="n">string</span></span>)</span>
+        <span class="name">TokenizerService</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>, </span><span class="param"><span class="n">string</span><span class="p">:</span> <span class="nb">str</span></span>)</span>
 
                 <label class="view-source-button" for="TokenizerService.__init__-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#TokenizerService.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService.__init__-23"><a href="#TokenizerService.__init__-23"><span class="linenos">23</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
-</span><span id="TokenizerService.__init__-24"><a href="#TokenizerService.__init__-24"><span class="linenos">24</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService.__init__-25"><a href="#TokenizerService.__init__-25"><span class="linenos">25</span></a><span class="sd">        NIADic Tokenizer init</span>
-</span><span id="TokenizerService.__init__-26"><a href="#TokenizerService.__init__-26"><span class="linenos">26</span></a><span class="sd">        :param string: input string</span>
-</span><span id="TokenizerService.__init__-27"><a href="#TokenizerService.__init__-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService.__init__-28"><a href="#TokenizerService.__init__-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">string</span>
-</span><span id="TokenizerService.__init__-29"><a href="#TokenizerService.__init__-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__df</span><span class="p">:</span> <span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService.__init__-26"><a href="#TokenizerService.__init__-26"><span class="linenos">26</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="TokenizerService.__init__-27"><a href="#TokenizerService.__init__-27"><span class="linenos">27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService.__init__-28"><a href="#TokenizerService.__init__-28"><span class="linenos">28</span></a><span class="sd">        NIADic Tokenizer init</span>
+</span><span id="TokenizerService.__init__-29"><a href="#TokenizerService.__init__-29"><span class="linenos">29</span></a><span class="sd">        :param df: DataFrame containing dictionary data</span>
+</span><span id="TokenizerService.__init__-30"><a href="#TokenizerService.__init__-30"><span class="linenos">30</span></a><span class="sd">        :param string: input string</span>
+</span><span id="TokenizerService.__init__-31"><a href="#TokenizerService.__init__-31"><span class="linenos">31</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService.__init__-32"><a href="#TokenizerService.__init__-32"><span class="linenos">32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">string</span>
+</span><span id="TokenizerService.__init__-33"><a href="#TokenizerService.__init__-33"><span class="linenos">33</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">:</span> <span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span>
+</span><span id="TokenizerService.__init__-34"><a href="#TokenizerService.__init__-34"><span class="linenos">34</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_dictionary_terms</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</span><span id="TokenizerService.__init__-35"><a href="#TokenizerService.__init__-35"><span class="linenos">35</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_endings</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_endings</span><span class="p">()</span>
 </span></pre></div>
 
 
@@ -758,6 +793,7 @@ If False, treats the keyword as a literal string.</li>
 <h6 id="parameters">Parameters</h6>
 
 <ul>
+<li><strong>df</strong>:  DataFrame containing dictionary data</li>
 <li><strong>string</strong>:  input string</li>
 </ul>
 </div>
@@ -769,25 +805,21 @@ If False, treats the keyword as a literal string.</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">tokenizer</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+        <span class="name">tokenizer</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>:</span></span>
 
                 <label class="view-source-button" for="TokenizerService.tokenizer-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#TokenizerService.tokenizer"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService.tokenizer-53"><a href="#TokenizerService.tokenizer-53"><span class="linenos">53</span></a>    <span class="k">def</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TokenizerService.tokenizer-54"><a href="#TokenizerService.tokenizer-54"><span class="linenos">54</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TokenizerService.tokenizer-55"><a href="#TokenizerService.tokenizer-55"><span class="linenos">55</span></a><span class="sd">        Extract meaningful words from given sentence.</span>
-</span><span id="TokenizerService.tokenizer-56"><a href="#TokenizerService.tokenizer-56"><span class="linenos">56</span></a><span class="sd">        :return: Words list</span>
-</span><span id="TokenizerService.tokenizer-57"><a href="#TokenizerService.tokenizer-57"><span class="linenos">57</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TokenizerService.tokenizer-58"><a href="#TokenizerService.tokenizer-58"><span class="linenos">58</span></a>        <span class="n">words_candidate</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="TokenizerService.tokenizer-59"><a href="#TokenizerService.tokenizer-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__clean_text</span><span class="p">()</span>
-</span><span id="TokenizerService.tokenizer-60"><a href="#TokenizerService.tokenizer-60"><span class="linenos">60</span></a>
-</span><span id="TokenizerService.tokenizer-61"><a href="#TokenizerService.tokenizer-61"><span class="linenos">61</span></a>        <span class="n">split_words</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</span><span id="TokenizerService.tokenizer-62"><a href="#TokenizerService.tokenizer-62"><span class="linenos">62</span></a>        <span class="k">for</span> <span class="n">split_word</span> <span class="ow">in</span> <span class="n">split_words</span><span class="p">:</span>
-</span><span id="TokenizerService.tokenizer-63"><a href="#TokenizerService.tokenizer-63"><span class="linenos">63</span></a>            <span class="n">clear_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__remove_ending</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">split_word</span><span class="p">)</span>
-</span><span id="TokenizerService.tokenizer-64"><a href="#TokenizerService.tokenizer-64"><span class="linenos">64</span></a>            <span class="n">words_candidate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clear_end</span><span class="p">)</span>
-</span><span id="TokenizerService.tokenizer-65"><a href="#TokenizerService.tokenizer-65"><span class="linenos">65</span></a>        <span class="k">return</span> <span class="n">words_candidate</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TokenizerService.tokenizer-90"><a href="#TokenizerService.tokenizer-90"><span class="linenos">90</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="TokenizerService.tokenizer-91"><a href="#TokenizerService.tokenizer-91"><span class="linenos">91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TokenizerService.tokenizer-92"><a href="#TokenizerService.tokenizer-92"><span class="linenos">92</span></a><span class="sd">        Extract meaningful words from given sentence.</span>
+</span><span id="TokenizerService.tokenizer-93"><a href="#TokenizerService.tokenizer-93"><span class="linenos">93</span></a><span class="sd">        :return: Words list</span>
+</span><span id="TokenizerService.tokenizer-94"><a href="#TokenizerService.tokenizer-94"><span class="linenos">94</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TokenizerService.tokenizer-95"><a href="#TokenizerService.tokenizer-95"><span class="linenos">95</span></a>        <span class="n">cleaned_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_string</span><span class="p">)</span>
+</span><span id="TokenizerService.tokenizer-96"><a href="#TokenizerService.tokenizer-96"><span class="linenos">96</span></a>        <span class="n">split_words</span> <span class="o">=</span> <span class="n">cleaned_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span><span id="TokenizerService.tokenizer-97"><a href="#TokenizerService.tokenizer-97"><span class="linenos">97</span></a>        
+</span><span id="TokenizerService.tokenizer-98"><a href="#TokenizerService.tokenizer-98"><span class="linenos">98</span></a>        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_token</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_words</span><span class="p">]</span>
 </span></pre></div>
 
 

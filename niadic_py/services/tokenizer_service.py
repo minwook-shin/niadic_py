@@ -1,8 +1,9 @@
 """
 NIADic Tokenizer Service
 """
-from pandas import DataFrame
+from typing import List, Set
 import re
+from pandas import DataFrame
 
 
 class TokenizerService:
@@ -19,46 +20,78 @@ class TokenizerService:
     token = TokenizerService(file.get_all_column(), string=example).tokenizer()
     ```
     """
-    def __init__(self, df, string):
+    _CLEAN_PATTERN = re.compile(r"[^\uAC00-\uD7A30-9a-zA-Z\s]")
+
+    def __init__(self, df: DataFrame, string: str):
         """
         NIADic Tokenizer init
+        :param df: DataFrame containing dictionary data
         :param string: input string
         """
-        self.__string: str = string
-        self.__df: DataFrame = df
+        self._string: str = string
+        self._df: DataFrame = df
+        self._dictionary_terms: Set[str] = set(self._df.index)
+        self._endings: List[str] = self._extract_endings()
 
-    def __clean_text(self):
+    def _extract_endings(self) -> List[str]:
+        """
+        Extract and sort ending and particle tags from the DataFrame.
+        Pre-computation improves performance by avoiding repeated DataFrame filtering.
+        """
+        # Filter for tags starting with 'e' (endings) or 'j' (particles/josa)
+        mask = self._df['tag'].astype(str).str.match(r'^[ej]', case=False)
+        endings = self._df.index[mask].unique().tolist()
+
+        # Sort by length in descending order to match longest suffixes first
+        endings.sort(key=len, reverse=True)
+        return endings
+
+    def _clean_text(self, text: str) -> str:
         """
         Clean up sentences by removing special symbols.
-        :return: sentences
+        :param text: input text
+        :return: cleaned text
         """
-        self.string = re.sub(r"[^\uAC00-\uD7A30-9a-zA-Z\s]", "", self.__string)
-        return self.string
+        return self._CLEAN_PATTERN.sub("", text)
 
-    def __remove_ending(self, text):
+    def _process_token(self, text: str) -> str:
         """
-        Clean up sentences by removing ending tag.
-        :param text:
-        :return:
+        Process a token to find its stem by removing endings/particles recursively.
+        Validates the stem against the dictionary.
+        Also checks for predicate base forms (stem + '다').
+        :param text: word to process
+        :return: stem (or base form) if found and valid, otherwise original text
         """
-        end_df = self.__df[self.__df.tag.str.contains("^e")]
-        index_list = end_df.index.tolist()
-        for index in index_list:
-            if text.endswith(index):
-                text = text[:len(text) - len(index)]
-                break
+        # 1. If the word itself is in the dictionary, return it.
+        if text in self._dictionary_terms:
+            return text
+
+        # 2. Check predicate base form (Stem + '다')
+        # This handles verbs/adjectives where the dictionary entry ends with '다'
+        stem_da = text + "다"
+        if stem_da in self._dictionary_terms:
+            return text
+
+        # 3. Try to strip endings/particles recursively
+        for ending in self._endings:
+            if text.endswith(ending):
+                stem = text[:-len(ending)]
+                if not stem:
+                    continue
+
+                # Recursive call to handle multiple suffixes (e.g., 었+습니다)
+                found_stem = self._process_token(stem)
+                if found_stem in self._dictionary_terms or (found_stem + "다") in self._dictionary_terms:
+                    return found_stem
+
         return text
 
-    def tokenizer(self):
+    def tokenizer(self) -> List[str]:
         """
         Extract meaningful words from given sentence.
         :return: Words list
         """
-        words_candidate = []
-        self.__clean_text()
-
-        split_words = self.string.split()
-        for split_word in split_words:
-            clear_end = self.__remove_ending(text=split_word)
-            words_candidate.append(clear_end)
-        return words_candidate
+        cleaned_text = self._clean_text(self._string)
+        split_words = cleaned_text.split()
+        
+        return [self._process_token(word) for word in split_words]
