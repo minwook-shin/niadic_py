@@ -34,7 +34,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "build==1.4.3",
+    "build==1.4.4",
     "pdoc==15.0.4"
 ]
 
